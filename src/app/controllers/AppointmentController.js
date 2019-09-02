@@ -37,7 +37,9 @@ class AppointmentController {
 
   async store(req, res) {
     const schema = Yup.object().shape({
-      provider_id: Yup.number().required(),
+      provider_id: Yup.number()
+        .required()
+        .notOneOf([req.userId], 'Provider cannot schedule for yourself'),
       date: Yup.date().required(),
     });
 
