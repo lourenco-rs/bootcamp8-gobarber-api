@@ -1,4 +1,4 @@
 export default {
-  secret: 'hash-unico-no-universo-que-pode-ser-gerado-no-md5-online',
+  secret: process.env.APP_SECRET,
   expiresIn: '7d',
 };
